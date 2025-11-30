@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_stats"
+        android:icon="@drawable/ic_progress"
+        android:title="Progress" />
+
+    <item
+        android:id="@+id/nav_meditation"
+        android:icon="@drawable/ic_meditation"
+        android:title="Meditation" />
+
+    <item
+        android:id="@+id/nav_workouts"
+        android:icon="@drawable/ic_dumbbell"
+        android:title="Workouts" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+
+</menu>

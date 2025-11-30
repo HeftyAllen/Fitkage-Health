@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Left Weight -->
+    <path
+        android:fillColor="#101010"
+        android:pathData="M4,14 H12 V34 H4 Z"/>
+
+    <!-- Right Weight -->
+    <path
+        android:fillColor="#121212"
+        android:pathData="M36,14 H44 V34 H36 Z"/>
+
+    <!-- Bar -->
+    <path
+        android:fillColor="#181818"
+        android:pathData="M12,20 H36 V28 H12 Z"/>
+</vector>

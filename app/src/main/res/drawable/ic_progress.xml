@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- subtle soft glow fallback: a semi-transparent enlarged shape behind the icon -->
+    <group android:translateX="0" android:translateY="0" android:scaleX="1" android:scaleY="1">
+        <path
+            android:fillColor="#0A000000"
+        android:pathData="M3,18 h3 a1,1 0 0 0 1,-1 v-6 a1,1 0 0 0 -1,-1 H3 a1,1 0 0 0 -1,1 v6 a1,1 0 0 0 1,1 z" />
+        <path
+            android:fillColor="#0A000000"
+            android:pathData="M8.5,18 h3 a1,1 0 0 0 1,-1 v-8 a1,1 0 0 0 -1,-1 h-3 a1,1 0 0 0 -1,1 v8 a1,1 0 0 0 1,1 z" />
+        <path
+            android:fillColor="#0A000000"
+            android:pathData="M14.5,18 h3 a1,1 0 0 0 1,-1 v-10 a1,1 0 0 0 -1,-1 h-3 a1,1 0 0 0 -1,1 v10 a1,1 0 0 0 1,1 z" />
+        <path
+            android:fillColor="#0A000000"
+            android:pathData="M6,11 C9.5,8 12.5,6 18,4" />
+    </group>
+
+    <!-- bars -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3,18 h3 a1,1 0 0 0 1,-1 v-6 a1,1 0 0 0 -1,-1 H3 a1,1 0 0 0 -1,1 v6 a1,1 0 0 0 1,1 z"
+        android:fillType="nonZero" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.5,18 h3 a1,1 0 0 0 1,-1 v-8 a1,1 0 0 0 -1,-1 h-3 a1,1 0 0 0 -1,1 v8 a1,1 0 0 0 1,1 z"
+        android:fillType="nonZero" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14.5,18 h3 a1,1 0 0 0 1,-1 v-10 a1,1 0 0 0 -1,-1 h-3 a1,1 0 0 0 -1,1 v10 a1,1 0 0 0 1,1 z"
+        android:fillType="nonZero" />
+
+    <!-- upward curved arrow (body) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,13
+                          C9.0,9.5 12.0,7.0 17.0,5.5
+                          L19.0,4.5
+                          C19.3,4.3 19.8,4.4 20.0,4.8
+                          C20.2,5.2 20.1,5.7 19.7,5.9
+                          L18.2,6.8
+                          C13.9,9.1 11.0,11.2 7.0,14.5
+                          C6.7,14.8 6.2,14.8 5.9,14.5
+                          C5.6,14.2 5.6,13.7 5.9,13.4 Z"
+        android:fillType="nonZero" />
+
+    <!-- arrow head (separate so it can look sharp) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18.8,3.8
+                          L21.2,1.6
+                          C21.5,1.3 22.0,1.4 22.3,1.8
+                          C22.6,2.2 22.5,2.7 22.1,3.0
+                          L19.6,4.9
+                          C19.3,5.1 18.8,5.0 18.6,4.6
+                          C18.4,4.2 18.5,3.7 18.8,3.8 Z" />
+</vector>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <!-- Simple day button used by MealPlanActivity to render the day selector.
+         Button ID must be dayButton (used by the activity code). -->
+    <Button
+        android:id="@+id/dayButton"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:background="@drawable/badge_meal_type"
+        android:padding="4dp"
+        android:text="Mon"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+
+</FrameLayout>

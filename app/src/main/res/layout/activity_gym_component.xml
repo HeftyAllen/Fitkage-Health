@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_gym_component.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gym_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grandient_bg"
+    tools:context=".component.GymComponentActivity">
+
+    <!-- App bar / toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/card_background"
+            app:title="Workout Programs"
+            app:titleTextColor="@color/white"
+            app:menu="@menu/gym_menu" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Header area (below toolbar) -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:elevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/header_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose Your Workout"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select a program or create your own"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Custom Workout Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/customWorkoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/card_dark">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@drawable/card_background"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/customWorkoutTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Create Custom Workout"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/customWorkoutSubtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Design your own workout with full creative control"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/customWorkoutIcon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_add_circle"
+                        app:tint="@color/white"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Custom Workouts List -->
+            <TextView
+                android:id="@+id/customWorkoutsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Custom Workouts"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/customWorkoutsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_custom_workout" />
+
+            <!-- Grid of body part cards (2 columns) -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/bodyPartGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:columnCount="2"
+                app:rowCount="9"
+                app:useDefaultMargins="true">
+
+                <!-- chest -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chestCard"
+                    style="@style/Widget.MaterialComponents.CardView"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp"
+                    android:layout_margin="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:id="@+id/ic_chest"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/chest" />
+
+                        <TextView
+                            android:id="@+id/chestTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chest"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- arms -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/armsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_arms"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/arms" />
+                        <TextView android:id="@+id/armsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arms"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- shoulders -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shouldersCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_shoulders"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/shoulder" />
+                        <TextView android:id="@+id/shouldersTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Shoulders" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- back -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/backCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_back"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp" android:src="@drawable/back2day" />
+                        <TextView android:id="@+id/backTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Back" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- legs -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/legsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_legs" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/leg" />
+                        <TextView android:id="@+id/legsTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Legs" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- thighs -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/thighsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_thighs" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/thighs" />
+                        <TextView android:id="@+id/thighsTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thighs" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- calves -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/calvesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_calves" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/calves" />
+                        <TextView android:id="@+id/calvesTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Calves" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- glutes -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/glutesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_glutes" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/glutes" />
+                        <TextView android:id="@+id/glutesTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Glutes" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- abs -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/absCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_abs" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_abs" />
+                        <TextView android:id="@+id/absTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Abs" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- obliques -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/obliquesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_obliques" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_obliques" />
+                        <TextView android:id="@+id/obliquesTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Obliques" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cardio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardioCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_cardio" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_cardio" />
+                        <TextView android:id="@+id/cardioTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cardio" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- hiit -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hiitCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_hiit" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_hiit" />
+                        <TextView android:id="@+id/hiitTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HIIT" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- full body -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fullBodyCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_fullbody" android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/ic_fullbody" />
+                        <TextView android:id="@+id/fullBodyTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Full Body" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- yoga -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/yogaCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center" android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_yoga"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp" android:src="@drawable/ic_yoga" />
+                        <TextView android:id="@+id/yogaTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yoga" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- pilates -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pilatesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_pilates"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp" android:src="@drawable/ic_pilates" />
+                        <TextView android:id="@+id/pilatesTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pilates"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- stretching -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/stretchCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_stretch"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp" android:src="@drawable/ic_stretch" />
+                        <TextView android:id="@+id/stretchTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stretching" android:textColor="@color/white"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- balance -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/balanceCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp" android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_balance"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp" android:src="@drawable/ic_balance" />
+                        <TextView android:id="@+id/balanceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance" android:textColor="@color/white" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- neck & traps -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/neckTrapsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_neck"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_neck" />
+                        <TextView android:id="@+id/neckTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neck &amp; Traps"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- endurance -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/enduranceFlexCard"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    app:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardElevation="6dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/card_background">
+                        <ImageView android:id="@+id/ic_endurance"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_endurance" />
+                        <TextView android:id="@+id/enduranceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Endurance"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <!-- Optional: another recycler -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/workoutGridRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_workout_category"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

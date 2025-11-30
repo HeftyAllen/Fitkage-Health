@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/grad_bg_alt">
+
+        <!-- Weight input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weightInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight (kg)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weightEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:imeOptions="actionNext" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Photos picker -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/pickPhotosBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick photos"
+                android:drawableLeft="@drawable/ic_add_white"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" />
+
+            <TextView
+                android:id="@+id/photosCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 photos selected"
+                android:textColor="@color/grey"
+                android:layout_marginStart="12dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Notes -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/notesInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notes (optional)"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/notesEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:gravity="top"
+                android:imeOptions="flagNoExtractUi" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Lifts instructions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lifts (one per line, format: Bench:80kg x5)"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/liftsInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/liftsEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:gravity="top"
+                android:imeOptions="flagNoExtractUi" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- small spacer so buttons in AlertDialog aren't cramped -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+    </LinearLayout>
+</ScrollView>

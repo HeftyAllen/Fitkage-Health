@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fitone" type="id" />
+    <item name="fitonetitle" type="id" />
+    <item name="fitonedesc" type="id" />
+    <item name="intropage" type="id" />
+    <item name="subintropage" type="id" />
+    <item name="divpage" type="id" />
+    <item name="timerValue" type="id" />
+    <item name="imgtimer" type="id" />
+    <item name="bgprogress" type="id" />
+    <item name="btnexercise" type="id" />
+    <item name="titlepage" type="id" />
+    <item name="subtitlepage" type="id" />
+    <item name="fittwo" type="id" />
+    <item name="fittwotitle" type="id" />
+    <item name="fittwodesc" type="id" />
+    <item name="fitthree" type="id" />
+    <item name="fitthreetitle" type="id" />
+    <item name="fitthreedesc" type="id" />
+    <item name="fitfour" type="id" />
+    <item name="fitfourtitle" type="id" />
+    <item name="fitfourdesc" type="id" />
+    <item name="img_endurance_flex" type="id" />
+    <item name="obliquesCard" type="id" />
+    <item name="img_obliques" type="id" />
+    <item name="cardioCard" type="id" />
+    <item name="img_cardio" type="id" />
+    <item name="hiitCard" type="id" />
+    <item name="img_hiit" type="id" />
+    <item name="fullBodyCard" type="id" />
+    <item name="img_fullbody" type="id" />
+    <item name="yogaCard" type="id" />
+    <item name="img_yoga" type="id" />
+    <item name="pilatesCard" type="id" />
+    <item name="img_pilates" type="id" />
+    <item name="stretchCard" type="id" />
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="workoutPlan"
+            type="com.example.fitkagehealth.model.WorkoutPlan" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/personal_info_bg_gradient"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/workoutName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{workoutPlan.name}"
+                android:textColor="@color/white_60"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="Workout Name" />
+
+            <TextView
+                android:id="@+id/exerciseCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white_60"
+                android:text="@{String.format(`%d exercises`, workoutPlan.exercises.size)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="5 exercises" />
+
+            <TextView
+                android:id="@+id/difficultyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white_60"
+                android:text="@{workoutPlan.difficulty}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                tools:text="Medium" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Delete" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

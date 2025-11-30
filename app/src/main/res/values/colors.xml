@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Mode Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_light">#FFFFFFFF</color>
+    <color name="text_light">#FF000000</color>
+
+    <color name="iconStroke">#FFFFFF</color>
+
+    <!-- Brand & Feature Colors -->
+    <color name="maiColour">#101322</color>
+    <color name="yellow">#FFC801</color>
+    <color name="Night_mode">#6124B1</color>
+    <color name="notifications">#13B2C3</color>
+    <color name="secruity">#D95f69</color>
+    <color name="card_bg">#222222</color>
+    <color name="card_stroke">#2E2E2E</color>
+    <color name="card_divider">#2A2A2A</color>
+    <color name="accent">#00BFA5</color> <!-- or your brand color -->
+    <color name="calendar_text_color">#BDB8B8</color>
+    <color name="meditationGradientStart">#FF6EA8</color>
+    <color name="meditationGradientEnd">#5B2EFF</color>
+
+    <color name="good_condition">#4CAF50</color>
+    <color name="poor_condition">#F44336</color>
+    <color name="excellent_score">#4CAF50</color>
+    <color name="good_score">#8BC34A</color>
+    <color name="fair_score">#FFC107</color>
+    <color name="poor_score">#F44336</color>
+
+
+    <!-- Background Colors -->
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_background_secondary">#252525</color>
+    <color name="card_overlay">#801E1E1E</color>
+    <color name="card_overlay_dark">#CC1E1E1E</color>
+    <color name="input_background">#2D2D2D</color>
+
+    <!-- Text Colors -->
+
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    <!-- Old AppCompat Colors -->
+    <color name="colorPrimary">#ffae00</color>
+    <color name="colorPrimaryDark">#A16E00</color>
+    <color name="colorAccent">#373737</color>
+
+
+    <!-- FitKage primary accent -->
+    <color name="primary">#1ED3A7</color>          <!-- teal/green accent -->
+    <color name="primary_variant">#13B28E</color>
+    <color name="secondary">#FFB86B</color>        <!-- warm accent for buttons -->
+
+    <!-- Cards and overlays -->
+    <color name="card_dark">#0F1724</color>
+    <color name="card_light">#142635</color>
+
+
+    <!-- Bottom nav / icons -->
+    <color name="nav_item_active">#1ED3A7</color>
+    <color name="nav_item_inactive">#80FFFFFF</color>
+
+    <!-- Misc -->
+    <color name="transparent_black_80">#CC000000</color>
+    <color name="shadow">#0A000000</color>
+    <color name="green">#30F305</color>
+    <color name="grey">#736E6E</color>
+    <color name="red">#EF190A</color>
+    <color name="orange">#FF9800</color>
+    <color name="calendar_text_glow">#9C27B0</color>
+    <color name="progress_track_color">#8D8988</color>
+    <color name="primary_light">#36B8F4</color>
+    <color name="green_light">#5EFD09</color>
+    <color name="surface_variant">#47A9F6</color>
+
+</resources>

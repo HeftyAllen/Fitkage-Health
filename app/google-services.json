@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1062728845812",
+    "project_id": "fitkagehealth",
+    "storage_bucket": "fitkagehealth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062728845812:android:148a8b1eb51f20b99a51a1",
+        "android_client_info": {
+          "package_name": "com.example.fitkagehealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmf5phK54K3un6Q94vn5MYsCg952pqQkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

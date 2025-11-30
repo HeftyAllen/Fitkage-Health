@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/card_background"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/exerciseGif"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_corner_small"
+            tools:src="@drawable/chest" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="12dp">
+
+            <TextView
+                android:id="@+id/exerciseName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bench Press"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/setsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 sets"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:background="@drawable/chip_background_small"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp" />
+
+                <TextView
+                    android:id="@+id/repsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 reps"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:background="@drawable/chip_background_small"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    android:layout_marginStart="4dp" />
+
+                <TextView
+                    android:id="@+id/restText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60s rest"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:background="@drawable/chip_background_small"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/white_60" />
+
+            <ImageButton
+                android:id="@+id/removeButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_remove"
+                app:tint="@color/error"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

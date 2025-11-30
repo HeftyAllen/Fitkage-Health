@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 🥗 Diet Preferences -->
+    <string-array name="diet_preference_options">
+        <item>No Preference</item>
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+        <item>Gluten Free</item>
+        <item>Ketogenic</item>
+        <item>Paleo</item>
+        <item>Mediterranean</item>
+    </string-array>
+
+    <!-- ⏰ Time Frame Options -->
+    <string-array name="time_frame_options">
+        <item>Day</item>
+        <item>Week</item>
+    </string-array>
+
+    <!-- 🍽️ Meals Per Day -->
+    <string-array name="meals_per_day_options">
+        <item>3 meals</item>
+        <item>4 meals</item>
+        <item>5 meals</item>
+        <item>6 meals</item>
+    </string-array>
+
+</resources>
